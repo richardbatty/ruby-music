@@ -1,6 +1,6 @@
 class Note
 
-  attr_reader :samples, :sample_rate
+  attr_reader :samples, :sample_rate, :frequency
 
   def initialize(frequency = 440, duration = 1.0)
     @frequency   = frequency.to_f

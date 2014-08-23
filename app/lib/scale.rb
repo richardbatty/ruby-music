@@ -4,9 +4,9 @@ class Octave
 
   attr_reader :samples
 
-  def initialize()
+  def initialize(starting_note)
     r = 2**(1.0/12.0)
-    starting_freq = 440
+    starting_freq = starting_note.frequency
     octave = []
     13.times do |i|
       frequency = starting_freq * r ** i
