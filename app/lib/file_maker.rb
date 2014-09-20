@@ -1,3 +1,5 @@
+require 'wavefile'
+
 class MusicFile
 
   def initialize(filename, notes, sample_rate)
