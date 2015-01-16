@@ -15,7 +15,15 @@ class MusicFile
   end
 
   def play
-    `afplay #{@filename}`
-  end
+    platform = RbConfig::CONFIG['host_os']
 
+    case
+    when platform =~ /darwin/
+      system "afplay #{@filename}"
+    when platform =~ /linux/
+      system "aplay #{@filename}"
+    else
+      fail IOError "I don't know how to play wavs on #{platform}"
+    end
+  end
 end
